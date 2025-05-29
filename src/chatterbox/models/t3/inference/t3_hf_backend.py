@@ -96,7 +96,7 @@ class T3HuggingfaceBackend(LlamaPreTrainedModel, GenerationMixin):
             inputs_embeds=inputs_embeds,
             past_key_values=past_key_values,
             use_cache=use_cache,
-            output_attentions=output_attentions,
+            output_attentions=False,
             output_hidden_states=output_hidden_states,
             return_dict=True,
         )
@@ -112,5 +112,5 @@ class T3HuggingfaceBackend(LlamaPreTrainedModel, GenerationMixin):
             logits=logits,
             past_key_values=tfmr_out.past_key_values,
             hidden_states=tfmr_out.hidden_states,
-            attentions=tfmr_out.attentions,
+            attentions=None,
         )
